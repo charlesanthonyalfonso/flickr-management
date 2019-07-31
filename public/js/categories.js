@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	displayCategories();
+	var eventAttached = false;
+	var element = null;
 
 
 	function displayCategories(){
@@ -75,8 +77,11 @@ $(document).ready(function(){
 	    $('.span-editable').toggleClass('editable-click');
 	    $(this).addClass('hide');
 	    $('.cancel-edit').removeClass('hide');
+	    $('[data-toggle="modal"]').attr('disabled', 'disabled');
 	    
-
+	    var mode = 'inline';
+	    if($(window).width() < 600)
+	    	mode = 'popup';
 		$('.span-editable').editable({
 			ajaxOptions: {
 			    type: 'PUT',
@@ -84,7 +89,7 @@ $(document).ready(function(){
 			},
 	        url: '/category',
 	        pk: 1,
-	        mode: 'inline',
+	        mode: mode,
 	        validate: function(value) {
 			    if($.trim(value) == '') {
 			        return 'Name is required';
@@ -109,7 +114,23 @@ $(document).ready(function(){
 	    	}
 	    });
 	    // $('.span-editable').editable('option', 'enable', true);
+
+	    if(!eventAttached){
+			$('.span-editable').on('shown', function(e, editable){
+				element = editable.$element.parent('.list-group-item').find('.btn-delete-category');
+				element.addClass('hide');
+			})
+
+			$('.span-editable').on('hidden', function(e, editable){
+				//console.log(editable);
+				//editable.$element.parent('.list-group-item').find('.btn-delete-category').removeClass('hide');
+				element.removeClass('hide');
+			})
+			eventAttached = true;
+		}
 	});
+
+
 
 	$('.cancel-edit').on('click touchstart', function(e){
 	    e.preventDefault();
@@ -122,7 +143,9 @@ $(document).ready(function(){
 	    $(this).addClass('hide');
 	    $('.edit-categories').removeClass('hide');
 	    $(this).toggleClass('active');
+	    $('[data-toggle="modal"]').removeAttr('disabled');
 	})
+
 
 	$(document).off('click touchstart','.btn-delete-category').on('click touchstart','.btn-delete-category', function(e){
 	    e.preventDefault();
