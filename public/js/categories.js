@@ -111,7 +111,7 @@ $(document).ready(function(){
 	    // $('.span-editable').editable('option', 'enable', true);
 	});
 
-	$(document).on('click touchstart', '.cancel-edit', function(e){
+	$('.cancel-edit').on('click touchstart', function(e){
 	    e.preventDefault();
 	    e.stopPropagation();
 		$('.span-editable').removeClass('editable-click');
