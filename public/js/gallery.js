@@ -59,7 +59,7 @@ $(document).ready(function(){
 						'<a href="#" class="btn btn-primary pull-right btn-prev btn-prev-sm hidden-xs" >'+
 							'<i class="glyphicon glyphicon-chevron-left"></i>'+
 						'</a>'+
-						'<a href="#" class="btn btn-primary pull-right btn-prev btn-prev-xs visible-xs" >'+
+						'<a href="#" class="btn btn-primary pull-right btn-prev btn-prev-xs visible-xs" style="margin-bottom: 10px">'+
 							'<i class="glyphicon glyphicon-chevron-left"></i> Back to gallery'+
 						'</a>'+
 						 '<div class="col-xs-12 col-sm-8 img-container">'+
