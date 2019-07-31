@@ -1,13 +1,5 @@
-@media screen and (max-width: 767px){
-	.sidebar-offcanvas {
-	    /*width: 100%;
-	    background-color: #fcfefc;
-	    z-index: 1;
-	    height: 100%;
-	    left: -45.5% !important;*/
-	}
-
-	.row-offcanvas-left.active {
-	    /*left: -55%;*/
+@media screen and (max-width: 576px){
+	h1, .h1 {
+	    font-size: 30px;
 	}
 }

@@ -7,5 +7,6 @@ $.ajaxSetup({
 $(document).ready(function () {
   	$('[data-toggle="offcanvas"]').click(function () {
     	$('.row-offcanvas').toggleClass('active')
+    	$(this).find('i').toggleClass("glyphicon-menu-hamburger glyphicon-remove");
   	});
 });

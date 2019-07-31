@@ -8,6 +8,7 @@ $(document).ready(function(){
 		current_category = $(this).data('name');
 		getFlickrImageByCategory(current_category);
 		$('.row-offcanvas').removeClass('active');
+		$('[data-toggle="offcanvas"]').find('i').addClass('glyphicon-menu-hamburger').removeClass('glyphicon-remove');
 	})
 
 	function getFlickrImageByCategory(category){

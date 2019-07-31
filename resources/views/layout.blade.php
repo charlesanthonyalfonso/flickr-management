@@ -18,7 +18,9 @@
     	<div id="header">
     		<h1>
     			<span>Flickr Management</span>
-				<button type="button" class="btn btn-primary btn-xs pull-right visible-xs" data-toggle="offcanvas">Toggle nav</button>
+				<button type="button" class="mobile-nav-btn btn btn-default btn-md pull-right visible-xs" data-toggle="offcanvas">
+					<i class="glyphicon glyphicon-menu-hamburger"></i>
+				</button>
     		</h1>
     	</div>
     	<hr>
