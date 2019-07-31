@@ -164,6 +164,7 @@ $(document).ready(function(){
 							$('#category-list').html('<div class="alert alert-warning">No categories</div>');
 							$('.cancel-edit').addClass('hide');
 	    					$('.edit-categories').removeClass('hide');
+	    					$('[data-toggle="modal"]').removeAttr('disabled');
 						}
 					});
 				}
